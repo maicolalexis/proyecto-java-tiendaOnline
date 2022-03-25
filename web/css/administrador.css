@@ -1,0 +1,33 @@
+.contenedor_principal{
+    position: absolute;
+    width: 200px;
+    min-height: 100vh;
+    font-size: 20px;
+    margin-left: -60px;
+    background-color: #007bff;
+    max-height: 25%;
+    padding-left: 60px;
+    padding-top: 10px;
+    border-right: 3px solid #343a40;
+    
+    
+}
+
+.contenedor_principal a{
+    text-decoration: none;
+    width: 80%;
+    font-size: 20px;
+    display: block;
+    transition: 1s;
+    margin-left: 20px;
+    color: white;
+    margin-top: 15px;
+}
+.contenedor_principal a:hover{
+    color: rgba(255,255,255,.75);
+}
+.bg-dark {
+   
+    background-color: #343a40!important;
+    color: white;
+}
