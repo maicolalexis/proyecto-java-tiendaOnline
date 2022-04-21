@@ -42,7 +42,7 @@ public class ControladorUsu extends HttpServlet {
         if (op.equals("Ppal")) {
             
             request.getRequestDispatcher("usuario/usua.jsp").forward(request, response);
-            request.getRequestDispatcher("usuario/usua.jsp");
+            
     
         if (op.equals("Usuario")) {
             switch (opc) {

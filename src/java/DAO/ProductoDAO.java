@@ -34,7 +34,7 @@ public class ProductoDAO {
  
     public int insertar(ProductoBeans r) {
        
-        String sql = "insert into producto(nombres, costo, descripcion, cantidad, id_categoria)"
+        String sql = "insert into producto(nombres, costo, imagen, descripcion, cantidad, id_categoria)"
                 + "values(?,?,?,?,?)";
         try {
             cnx = con.ConexBD();
@@ -42,9 +42,10 @@ public class ProductoDAO {
 
             ps.setString(1, r.getNombre());
             ps.setFloat(2, r.getCosto());
-            ps.setString(3, r.getDescripcion());
-            ps.setInt(4, r.getCantidad());
-            ps.setInt(5, r.getCategoria());
+            ps.setBlob(3, r.getImg);
+            ps.setString(4, r.getDescripcion());
+            ps.setInt(5, r.getCantidad());
+            ps.setInt(6, r.getCategoria());
             ps.executeUpdate();
 
         } catch (Exception e) {

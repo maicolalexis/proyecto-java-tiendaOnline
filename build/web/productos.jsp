@@ -20,27 +20,34 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Usuarios</title>
-        <%@include file="../commons/cdn.jsp"%>
-        <link rel="stylesheet" href="../commons/Global.css" type="text/css">
+        <%@include file="commons/cdn.jsp"%>
+        <link rel="stylesheet" href="commons/Global.css" type="text/css">
     </head>
     <body>
-        <%@include file="../commons/Cabecera_1.jsp"%>
+        <%@include file="commons/Cabecera_1.jsp"%>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3 sidebar-col">
-                    <%@include file="../commons/SideBar.jsp"%>  
+                    <%@include file="commons/SideBar.jsp"%>  
                 </div>
 
                 <div class="col-sm-9 main-col">
-                    <form action="Productos?menu=Producto" method="POST"> 
+                    <form action="Productos?menu=Producto" method="POST" enctype="multipart/form-data"> 
                         <div class="form-group d-flex " style="padding-top: 10px;">
+                            <div class="col-sm-2">
+
+                                <label>imagen</label>
+                                <input type="file" value="${Producto.getCosto()}" name="imagen" class="form-control placeholder bg-dark text-white">
+                            </div>
 
                             <div class="col-sm-2">
 
                                 <label>Nombre</label>
                                 <input type="text" value="${Producto.getNombre()}" name="nombre" class="form-control placeholder bg-dark text-white">
                             </div>
+                            
                             <div class="col-sm-2">
+                             
 
                                 <label>Costo</label>
                                 <input type="text" value="${Producto.getCosto()}" name="costo" class="form-control placeholder bg-dark text-white">

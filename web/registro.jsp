@@ -43,10 +43,9 @@
             <div class="row">
                 <button type="submit" name="accion" value="insertar" class="btn btn-outline-info">Enviar</button>&nbsp;<a href="logueo.jsp" class="btn btn-outline-info">Login</a></div>
                     
-
-            </div>
-          
-            </form>
+             </form>
+         </div>
+           
              </div>
         
     </body>

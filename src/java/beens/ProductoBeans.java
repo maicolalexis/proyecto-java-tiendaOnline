@@ -5,6 +5,8 @@
  */
 package beens;
 
+
+
 /**
  *
  * @author SENA
@@ -13,6 +15,7 @@ public class ProductoBeans {
     private int id;
     private String nombre;
     private float costo;
+    
     private String descripcion;
     private int cantidad;
     private int estado;

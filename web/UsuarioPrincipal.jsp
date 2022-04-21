@@ -11,15 +11,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Usuarios</title>
-        <%@include file="../commons/cdn.jsp"%>
-        <link rel="stylesheet" href="../commons/Global.css" type="text/css">
+        <%@include file="commons/cdn.jsp"%>
+        <link rel="stylesheet" href="commons/Global.css" type="text/css">
     </head>
     <body>
-        <%@include file="../commons/Cabecera_1.jsp"%>
+        <%@include file="commons/Cabecera_1.jsp"%>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3 sidebar-col">
-                    <%@include file="../commons/SideBar.jsp"%>  
+                    <%@include file="commons/SideBar.jsp"%>  
                 </div>
 
                 <div class="col-sm-9 main-col">

@@ -48,7 +48,7 @@ public class Productos extends HttpServlet {
             switch (opc) {
 
                 case "mostrar":
-                    request.getRequestDispatcher("admin/productos.jsp").forward(request, response);
+                    request.getRequestDispatcher("productos.jsp").forward(request, response);
                     break;
 
                 case "insertar":
@@ -68,7 +68,7 @@ public class Productos extends HttpServlet {
 
                     miRegisD.insertar(miRegisB);
 
-                    request.getRequestDispatcher("admin/productos.jsp").forward(request, response);
+                    request.getRequestDispatcher("productos.jsp").forward(request, response);
                     break;
                 default:
                     throw new AssertionError();
@@ -77,14 +77,14 @@ public class Productos extends HttpServlet {
                     idUsr = Integer.parseInt(request.getParameter("id"));
 
                     miRegisD.eliminar(idUsr);
-                    request.getRequestDispatcher("admin/productos.jsp").forward(request, response);
+                    request.getRequestDispatcher("productos.jsp").forward(request, response);
                     break;
 
                 case "carga":
                     idUsr = Integer.parseInt(request.getParameter("id"));
                     ProductoBeans miBeans = miRegisD.cargar(idUsr);
                     request.setAttribute("Producto", miBeans);
-                    request.getRequestDispatcher("admin/productos.jsp").forward(request, response);
+                    request.getRequestDispatcher("productos.jsp").forward(request, response);
                     break;
                 case "modificar":
 
@@ -104,7 +104,7 @@ public class Productos extends HttpServlet {
                     miRegisB.setId(idUsr);
                     miRegisD.modificar(miRegisB);
 
-                    request.getRequestDispatcher("admin/productos.jsp").forward(request, response);
+                    request.getRequestDispatcher("productos.jsp").forward(request, response);
                     break;
         
                     

@@ -11,15 +11,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Usuarios</title>
-        <%@include file="../commons/cdn.jsp"%>
+        <%@include file="commons/cdn.jsp"%>
         
     </head>
     <body>
-        <%@include file="../commons/Cabecera_1.jsp"%>
+        <%@include file="commons/Cabecera_1.jsp"%>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3 sidebar-col">
-                    <%@include file="../commons2/SideBar.jsp"%>  
+                    <%@include file="commons2/SideBar.jsp"%>  
                 </div>
 
                 <div class="col-sm-9 main-col">

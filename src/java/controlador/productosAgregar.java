@@ -40,14 +40,14 @@ public class productosAgregar extends HttpServlet {
         String opc = request.getParameter("accion");
 
         if (op.equals("Ppal")) {
-            request.getRequestDispatcher("admin/pro_categoria.jsp").forward(request, response);
+            request.getRequestDispatcher("pro_categoria.jsp").forward(request, response);
 
         }
         if (op.equals("Categoria")) {
             switch (opc) {
 
                 case "mostrar":
-                    request.getRequestDispatcher("admin/pro_categoria.jsp").forward(request, response);
+                    request.getRequestDispatcher("pro_categoria.jsp").forward(request, response);
                     break;
 
                 case "insertar":
@@ -60,7 +60,7 @@ public class productosAgregar extends HttpServlet {
 
                     miRegisD.insertar(miRegisB);
 
-                    request.getRequestDispatcher("admin/pro_categoria.jsp").forward(request, response);
+                    request.getRequestDispatcher("pro_categoria.jsp").forward(request, response);
                     break;
                 default:
                     throw new AssertionError();
@@ -69,14 +69,14 @@ public class productosAgregar extends HttpServlet {
                     idUsr = Integer.parseInt(request.getParameter("id"));
 
                     miRegisD.eliminar(idUsr);
-                    request.getRequestDispatcher("admin/pro_categoria.jsp").forward(request, response);
+                    request.getRequestDispatcher("pro_categoria.jsp").forward(request, response);
                     break;
 
                 case "carga":
                     idUsr = Integer.parseInt(request.getParameter("id"));
                     productosBeens miBeans = miRegisD.cargar(idUsr);
                     request.setAttribute("Categoria", miBeans);
-                    request.getRequestDispatcher("admin/pro_categoria.jsp").forward(request, response);
+                    request.getRequestDispatcher("pro_categoria.jsp").forward(request, response);
                     break;
                 case "modificar":
 
@@ -87,7 +87,7 @@ public class productosAgregar extends HttpServlet {
                     miRegisB.setId(idUsr);
                     miRegisD.modificar(miRegisB);
 
-                    request.getRequestDispatcher("admin/pro_categoria.jsp").forward(request, response);
+                    request.getRequestDispatcher("pro_categoria.jsp").forward(request, response);
                     break;
         
                     
