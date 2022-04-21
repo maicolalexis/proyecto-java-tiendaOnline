@@ -1,0 +1,26 @@
+#pie
+{
+    min-height: 200px!important;
+    background: blue;
+    margin-top: 70vh;
+    background: #343a40 !important;
+    color: #6c757d;
+}
+
+.registro.row{
+    margin-top: 10px!important;
+    border-bottom: thin solid #3399ff!important;
+    padding: 10px;
+    
+}
+
+.registro>h1{
+    text-align: center;
+    color: #3399ff
+    
+}
+
+.registro label{
+    color: #EC2727;
+    
+}
