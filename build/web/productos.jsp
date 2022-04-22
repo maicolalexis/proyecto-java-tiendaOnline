@@ -35,11 +35,8 @@
                 <div class="col-sm-9 main-col">
                     <form action="Productos?menu=Producto" method="POST" enctype="multipart/form-data"> 
                         <div class="form-group d-flex " style="padding-top: 10px;">
-                            <div class="col-sm-2">
-
-                                <label>imagen</label>
-                                <input type="file" value="${Producto.getImagen()}" name="imagen" class="form-control placeholder bg-dark text-white">
-                            </div>
+                            
+                            
 
                             <div class="col-sm-2">
 
@@ -54,13 +51,13 @@
                                 <input type="text" value="${Producto.getCosto()}" name="costo" class="form-control placeholder bg-dark text-white">
                             </div>
                             
-                            <div class="col-sm-4">
+                            <div class="col-sm-4" >
 
                                 <label>descripcion</label>
-                                <input type="text" value="${Producto.getDescripcion()}" name="descripcion" class="form-control placeholder bg-dark text-white" style="width: 300px; height:100px; overflow: scroll; ">
+                                <input type="text" value="${Producto.getDescripcion()}" name="descripcion" class="form-control placeholder bg-dark text-white" style="width: 300px; height:38px;">
                             </div>
                             
-                            <div class="col-sm-2">
+                            <div class="col-sm-2" >
 
                                 <label>Cantidad</label>
                                 <input type="text" value="${Producto.getCantidad()}" name="cantidad" class="form-control placeholder bg-dark text-white">
@@ -84,8 +81,15 @@
                                         <%
                                             }
                                         %>
-                                </select>
+                                </select>                                
                             </div>
+                            
+                                <div class="col-sm-2" style="margin-top: 100px; margin-left: -70%;">
+
+                                <label>imagen</label>
+                                <input type="file" value="${Producto.getImagen()}" name="imagen" class="bg-dark text-white" >
+                            </div>
+                            
                             
                             
                            
@@ -152,7 +156,7 @@
 
                             <td><%= regM.getId()%></td>
                             <td><%= regM.getNombre()%></td>
-                            <td><img src="ControladorIMG?id=<%=regM.getId()%>" width="200" height="200"></td>
+                            <td><img src="ControladorIMG?id=<%=regM.getId()%>" width="100" height="100" style="object-fit: contain;"></td>
                             <td><%= regM.getCosto()%></td>
                             <td><%= regM.getDescripcion()%></td>
                             <td><%= regM.getCantidad()%></td>
