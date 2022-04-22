@@ -7,6 +7,11 @@ package DAO;
 
 import ConexionBD.ConexBD;
 import beens.ProductoBeans;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  *
@@ -36,13 +42,15 @@ public class ProductoDAO {
        
         String sql = "insert into producto(nombres, costo, imagen, descripcion, cantidad, id_categoria)"
                 + "values(?,?,?,?,?)";
+        
         try {
+            
             cnx = con.ConexBD();
             ps = cnx.prepareStatement(sql);
 
             ps.setString(1, r.getNombre());
             ps.setFloat(2, r.getCosto());
-            ps.setBlob(3, r.getImg);
+            
             ps.setString(4, r.getDescripcion());
             ps.setInt(5, r.getCantidad());
             ps.setInt(6, r.getCategoria());
@@ -68,6 +76,7 @@ public class ProductoDAO {
                 
                 regM.setId(rs.getInt("id"));
                 regM.setNombre(rs.getString("nombres"));
+                regM.setImagen(rs.getBinaryStream("imagen"));
                 regM.setCosto(rs.getFloat("costo"));
                 regM.setDescripcion(rs.getString("descripcion"));
                 regM.setCantidad(rs.getInt("cantidad"));
@@ -80,12 +89,36 @@ public class ProductoDAO {
                     
 
    
-        } catch (SQLException ex) {
-            System.err.println(ex);
-            Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception e) {
+            
         }
 
         return lista;
+    }
+    public void listarImg(int id, HttpServletResponse response){
+        String sql ="select * from producto where id=" +id;
+        InputStream inputStream = null;
+        OutputStream outputStream = null;
+        BufferedInputStream bufferedInputStream = null;
+        BufferedOutputStream bufferedOutputStream = null;
+        
+            try {
+                outputStream=response.getOutputStream();
+                cnx = con.ConexBD();
+                ps = cnx.prepareStatement(sql);
+                rs = ps.executeQuery();
+                if(rs.next()){
+                    inputStream = rs.getBinaryStream("imagen");
+                }
+                bufferedInputStream= new BufferedInputStream(inputStream);
+                bufferedOutputStream= new BufferedOutputStream(outputStream);
+                int i = 0;
+                while ((i = bufferedInputStream.read())!=-1) {                    
+                    bufferedOutputStream.write(i);
+                }
+            } catch (Exception ex) {
+                
+            }    
     }
     public boolean eliminar(int id) {
         String sql = "delete from producto where id=" + id;

@@ -3,10 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/online2.0/src/java/DAO/registroDAO.java</file>
-            <file>file:/C:/xampp/htdocs/online2.0/src/java/ConexionBD/ConexBD.java</file>
-            <file>file:/C:/xampp/htdocs/online2.0/src/java/controlador/RegistroControl.java</file>
-            <file>file:/C:/xampp/htdocs/online2.0/src/java/controlador/Productos.java</file>
+            <file>file:/C:/xampp/htdocs/proyecto-java-tiendaOnline/src/java/DAO/ProductoDAO.java</file>
+            <file>file:/C:/xampp/htdocs/proyecto-java-tiendaOnline/src/java/beens/ProductoBeans.java</file>
+            <file>file:/C:/xampp/htdocs/proyecto-java-tiendaOnline/src/java/controlador/ValidarIngreso.java</file>
+            <file>file:/C:/xampp/htdocs/proyecto-java-tiendaOnline/src/java/controlador/productosAgregar.java</file>
+            <file>file:/C:/xampp/htdocs/proyecto-java-tiendaOnline/web/productos.jsp</file>
+            <file>file:/C:/xampp/htdocs/proyecto-java-tiendaOnline/src/java/controlador/ControladorIMG.java</file>
+            <file>file:/C:/xampp/htdocs/proyecto-java-tiendaOnline/web/commons/SideBar.jsp</file>
+            <file>file:/C:/xampp/htdocs/proyecto-java-tiendaOnline/src/java/controlador/ControladorUsu.java</file>
+            <file>file:/C:/xampp/htdocs/proyecto-java-tiendaOnline/src/java/controlador/Productos.java</file>
+            <file>file:/C:/xampp/htdocs/proyecto-java-tiendaOnline/src/java/ConexionBD/ConexBD.java</file>
         </group>
     </open-files>
 </project-private>

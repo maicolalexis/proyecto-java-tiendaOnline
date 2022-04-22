@@ -7,6 +7,7 @@
 
 
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="beens.productosBeens"%>
 <%@page import="DAO.categorias"%>
 <%@page import="beens.ProductoBeans"%>
@@ -37,7 +38,7 @@
                             <div class="col-sm-2">
 
                                 <label>imagen</label>
-                                <input type="file" value="${Producto.getCosto()}" name="imagen" class="form-control placeholder bg-dark text-white">
+                                <input type="file" value="${Producto.getImagen()}" name="imagen" class="form-control placeholder bg-dark text-white">
                             </div>
 
                             <div class="col-sm-2">
@@ -100,12 +101,38 @@
                     <br>
                     <br>
                     <h2>LISTA DE PRODUCTOS</h2>
+                    <%--div class="container mt-4">
+                        <div class="row">
+                            <c:forEach var="p" items="${producto}">
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <lavel>${p.getNombres}</lavel>
+                                    </div>
+                                    <div class="card-body">
+                                        <i>$54656</i>
+                                        <img src="" width="200" height="180">
+                                        
+                                    </div>
+                                    <div class="card-footer text-center"></div>
+                                    <label>descripcion</label>
+                                    <div>
+                                        <a href="#" class="btn btn-outline-info">Agregar a carrito</a>
+                                        <a href="#" class="btn btn-danger">comprar</a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            </c:forEach>
+                        </div>
+                    </div--%>
 
                     <table class="table table-bordered table table-dark">
 
                         <tr>
                             <th>ID</th>
                             <th>Nombres</th>
+                            <th>image</th>
                             <th>Costo</th>
                             <th>Descripcion</th>
                             <th>cantidad</th>
@@ -125,6 +152,7 @@
 
                             <td><%= regM.getId()%></td>
                             <td><%= regM.getNombre()%></td>
+                            <td><img src="ControladorIMG?id=<%=regM.getId()%>" width="200" height="200"></td>
                             <td><%= regM.getCosto()%></td>
                             <td><%= regM.getDescripcion()%></td>
                             <td><%= regM.getCantidad()%></td>

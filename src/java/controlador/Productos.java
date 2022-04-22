@@ -10,6 +10,8 @@ import DAO.ProductoDAO;
 import beens.ProductoBeans;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -34,9 +36,10 @@ public class Productos extends HttpServlet {
     ProductoBeans miRegisB = new ProductoBeans();
     ProductoDAO miRegisD = new ProductoDAO();
     int idUsr;
-
+    List<ProductoBeans> productos = new ArrayList<>();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         String op = request.getParameter("menu");
         String opc = request.getParameter("accion");
 
@@ -48,6 +51,7 @@ public class Productos extends HttpServlet {
             switch (opc) {
 
                 case "mostrar":
+                    request.setAttribute("ProductosBeans", productos);
                     request.getRequestDispatcher("productos.jsp").forward(request, response);
                     break;
 
@@ -70,8 +74,7 @@ public class Productos extends HttpServlet {
 
                     request.getRequestDispatcher("productos.jsp").forward(request, response);
                     break;
-                default:
-                    throw new AssertionError();
+               
 
                 case "eliminar":
                     idUsr = Integer.parseInt(request.getParameter("id"));
@@ -106,13 +109,14 @@ public class Productos extends HttpServlet {
 
                     request.getRequestDispatcher("productos.jsp").forward(request, response);
                     break;
-        
+                
+                    
                     
             }
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    
     /**
      * Handles the HTTP <code>GET</code> method.
      *

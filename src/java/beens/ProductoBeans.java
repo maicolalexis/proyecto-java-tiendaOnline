@@ -5,6 +5,8 @@
  */
 package beens;
 
+import java.io.InputStream;
+
 
 
 /**
@@ -14,6 +16,7 @@ package beens;
 public class ProductoBeans {
     private int id;
     private String nombre;
+    private InputStream imagen;
     private float costo;
     
     private String descripcion;
@@ -36,6 +39,15 @@ public class ProductoBeans {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public InputStream getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(InputStream imagen) {
+        this.imagen = imagen;
+    }
+    
 
     public float getCosto() {
         return costo;
@@ -80,14 +92,18 @@ public class ProductoBeans {
     public ProductoBeans() {
     }
 
-    public ProductoBeans(int id, String nombre, float costo, String descripcion, int cantidad, int estado, int categoria) {
+    public ProductoBeans(int id, String nombre, InputStream imagen, float costo,  String descripcion, int cantidad, int estado, int categoria) {
         this.id = id;
         this.nombre = nombre;
+        this.imagen = imagen;
         this.costo = costo;
+        
         this.descripcion = descripcion;
         this.cantidad = cantidad;
         this.estado = estado;
         this.categoria = categoria;
     }
+
+   
     
 }
