@@ -87,7 +87,7 @@
                                 <div class="col-sm-2" style="margin-top: 100px; margin-left: -70%;">
 
                                 <label>imagen</label>
-                                <input type="file" value="${Producto.getImagen()}" name="imagen" class="bg-dark text-white" >
+                                <input type="file" name="imagen" class="bg-dark text-white" >
                             </div>
                             
                             

@@ -10,13 +10,17 @@ import DAO.ProductoDAO;
 import beens.ProductoBeans;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+@MultipartConfig
 
 /**
  *
@@ -58,6 +62,8 @@ public class Productos extends HttpServlet {
                 case "insertar":
 
                     String nom = request.getParameter("nombre");
+                    Part part = request.getPart("imagen");
+                    InputStream inputStream=part.getInputStream();
                     float cos = Float.parseFloat(request.getParameter("costo"));
                     String des = request.getParameter("descripcion");
                     int can = Integer.parseInt(request.getParameter("cantidad"));
@@ -65,6 +71,7 @@ public class Productos extends HttpServlet {
                     
                     
                     miRegisB.setNombre(nom);
+                    miRegisB.setImagen(inputStream);
                     miRegisB.setCosto(cos);
                     miRegisB.setDescripcion(des);
                     miRegisB.setCantidad(can);
@@ -92,6 +99,8 @@ public class Productos extends HttpServlet {
                 case "modificar":
 
                     String nom2 = request.getParameter("nombre");
+                    Part part2 = request.getPart("imagen");
+                    InputStream inputStream2=part2.getInputStream();
                     float cos2 = Float.parseFloat(request.getParameter("costo"));
                     String des2 = request.getParameter("descripcion");
                     int can2 = Integer.parseInt(request.getParameter("cantidad"));
@@ -99,6 +108,7 @@ public class Productos extends HttpServlet {
                     
                     
                     miRegisB.setNombre(nom2);
+                    miRegisB.setImagen(inputStream2);
                     miRegisB.setCosto(cos2);
                     miRegisB.setDescripcion(des2);
                     miRegisB.setCantidad(can2);

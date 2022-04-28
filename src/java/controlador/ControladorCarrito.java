@@ -59,15 +59,15 @@ public class ControladorCarrito extends HttpServlet {
                     item=item+1;
                     BeensCarrito car = new BeensCarrito();
                     car.setItem(item);
-                    car.setIdProducto(P.getId());
-                    car.setNombre(P.getNombre());
-                    car.setDescrip(P.getDescripcion());
-                    car.setPrecioFinal(P.getCosto());
+                    car.setId(P.getId());
+                    car.setNombres(P.getNombre());
+                    car.setDescripcion(P.getDescripcion());
+                    car.setCosto(P.getCosto());
                     car.setCantidad(cantidad);
-                    car.setSubToatal(cantidad*P.getCosto());
+                    car.setSubTotal(cantidad*P.getCosto());
                      Listacarrito.add(car);
                     request.setAttribute("contador", Listacarrito.size());
-                    request.getRequestDispatcher("ControladorCarrito?accion=carrito").forward(request,response); 
+                    request.getRequestDispatcher("ControladorCarrito?accion=index").forward(request,response); 
                 break;
                 case "Carrito":
                     totalpagar=0.0;

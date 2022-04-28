@@ -11,25 +11,12 @@ package beens;
  */
 public class BeensCarrito {
     int item;
-    int idProducto;
-    String nombre;
-    String descrip;
-    double PrecioFinal;
+    int id;
+    String nombres;
+    String descripcion;
+    float Costo;
     int cantidad;
-    double subToatal;
-
-    public BeensCarrito() {
-    }
-
-    public BeensCarrito(int item, int idProducto, String nombre, String descrip, double PrecioFinal, int cantidad, double subToatal) {
-        this.item = item;
-        this.idProducto = idProducto;
-        this.nombre = nombre;
-        this.descrip = descrip;
-        this.PrecioFinal = PrecioFinal;
-        this.cantidad = cantidad;
-        this.subToatal = subToatal;
-    }
+    double subTotal;
 
     public int getItem() {
         return item;
@@ -39,36 +26,36 @@ public class BeensCarrito {
         this.item = item;
     }
 
-    public int getIdProducto() {
-        return idProducto;
+    public int getId() {
+        return id;
     }
 
-    public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
-    public String getDescrip() {
-        return descrip;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescrip(String descrip) {
-        this.descrip = descrip;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public double getPrecioFinal() {
-        return PrecioFinal;
+    public float getCosto() {
+        return Costo;
     }
 
-    public void setPrecioFinal(double PrecioFinal) {
-        this.PrecioFinal = PrecioFinal;
+    public void setCosto(float Costo) {
+        this.Costo = Costo;
     }
 
     public int getCantidad() {
@@ -79,12 +66,26 @@ public class BeensCarrito {
         this.cantidad = cantidad;
     }
 
-    public double getSubToatal() {
-        return subToatal;
+    public double getSubTotal() {
+        return subTotal;
     }
 
-    public void setSubToatal(double subToatal) {
-        this.subToatal = subToatal;
+    public void setSubTotal(double subTotal) {
+        this.subTotal = subTotal;
     }
     
+    public BeensCarrito() {
+    }
+
+    public BeensCarrito(int item, int id, String nombres, String descripcion, float Costo, int cantidad, double subTotal) {
+        this.item = item;
+        this.id = id;
+        this.nombres = nombres;
+        this.descripcion = descripcion;
+        this.Costo = Costo;
+        this.cantidad = cantidad;
+        this.subTotal = subTotal;
+    }
+    
+
 }

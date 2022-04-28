@@ -15,7 +15,7 @@
         
         <div class="container mt-5">
             <div class="row">
-                <div class="col-sm-7" style="display: flex">
+                <div class="col-sm-10" style="display: flex">
                     <%
                             List lis = new ProductoDAO().getAll();
                             ListIterator list = lis.listIterator();
@@ -26,7 +26,7 @@
                     <div class="card" >
                         
                         
-                        <div class="card-header">
+                        <div class="card-header bg-dark text-white">
                             
                             <h2><%=regM.getNombre()%></h2>
                             
@@ -34,16 +34,16 @@
                         </div>
                         <div class="card-body">
                             
-                            <img src="ControladorIMG?id=<%=regM.getId()%>" width="200" height="180" >
+                            <img src="ControladorIMG?id=<%=regM.getId()%>" style="width: 200px; height: 200px;">
                             
                             
                             
                         </div>
                             <i style="text-align: center;">$<%=regM.getCosto()%></i>
-                        <div class="card-footer">
+                        <div class="card-footer bg-dark text-white">
                             <label><%=regM.getDescripcion()%></label>
                             <div>
-                                <a href="" class="btn btn-outline-info">agregar a carrito</a>
+                                <a href="ControladorCarrito?accion=Agregar" class="btn btn-primary">agregar a carrito</a>
                                 <a href="" class="btn btn-danger">comprar</a>
                             </div>
                             

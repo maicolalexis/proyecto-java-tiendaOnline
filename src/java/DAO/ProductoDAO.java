@@ -40,8 +40,8 @@ public class ProductoDAO {
  
     public int insertar(ProductoBeans r) {
        
-        String sql = "insert into producto(nombres, costo, imagen, descripcion, cantidad, id_categoria)"
-                + "values(?,?,?,?,?)";
+        String sql = "insert into producto(nombres, imagen, costo, descripcion, cantidad, id_categoria)"
+                + "values(?,?,?,?,?,?)";
         
         try {
             
@@ -49,7 +49,8 @@ public class ProductoDAO {
             ps = cnx.prepareStatement(sql);
 
             ps.setString(1, r.getNombre());
-            ps.setFloat(2, r.getCosto());
+            ps.setBlob(2, r.getImagen());
+            ps.setFloat(3, r.getCosto());
             
             ps.setString(4, r.getDescripcion());
             ps.setInt(5, r.getCantidad());
@@ -145,9 +146,10 @@ public class ProductoDAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 miRegisB.setNombre(rs.getString(2));
-                miRegisB.setCosto(rs.getFloat(3));
-                miRegisB.setDescripcion(rs.getString(4));
-                miRegisB.setCantidad(rs.getInt(5));
+                miRegisB.setImagen(rs.getBinaryStream(3));
+                miRegisB.setCosto(rs.getFloat(4));
+                miRegisB.setDescripcion(rs.getString(5));
+                miRegisB.setCantidad(rs.getInt(6));
                 miRegisB.setCategoria(rs.getInt(7));
             }
         } catch (SQLException ex) {
@@ -160,18 +162,18 @@ public class ProductoDAO {
 
   public int modificar(ProductoBeans r) {
 
-        String sql = "UPDATE producto SET nombres=?, costo=?, descripcion=?, cantidad=?, id_categoria=?" + " WHERE id=?";
+        String sql = "UPDATE producto SET nombres=?, imagen=?, costo=?, descripcion=?, cantidad=?, id_categoria=?" + " WHERE id=?";
         try {
             cnx = con.ConexBD();
             ps = cnx.prepareStatement(sql);
 
             ps.setString(1, r.getNombre());
-            
-            ps.setFloat(2, r.getCosto());
-            ps.setString(3, r.getDescripcion());
-            ps.setInt(4, r.getCantidad());
-            ps.setInt(5, r.getCategoria());
-            ps.setInt(6, r.getId());
+            ps.setBlob(2, r.getImagen());
+            ps.setFloat(3, r.getCosto());
+            ps.setString(4, r.getDescripcion());
+            ps.setInt(5, r.getCantidad());
+            ps.setInt(6, r.getCategoria());
+            ps.setInt(7, r.getId());
 
             ps.executeUpdate();
 
