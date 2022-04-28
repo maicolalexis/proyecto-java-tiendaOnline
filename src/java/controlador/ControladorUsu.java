@@ -41,14 +41,14 @@ public class ControladorUsu extends HttpServlet {
         
         if (op.equals("Ppal")) {
             
-            request.getRequestDispatcher("usuario/usua.jsp").forward(request, response);
+            request.getRequestDispatcher("usua.jsp").forward(request, response);
             
     
         if (op.equals("Usuario")) {
             switch (opc) {
 
                 case "mostrar":
-                    request.getRequestDispatcher("usuario/usua.jsp").forward(request, response);
+                    request.getRequestDispatcher("usua.jsp").forward(request, response);
                     break;
 
                
@@ -57,14 +57,14 @@ public class ControladorUsu extends HttpServlet {
                     idUsr = Integer.parseInt(request.getParameter("id"));
 
                     miRegisD.eliminar(idUsr);
-                    request.getRequestDispatcher("usuario/usua.jsp").forward(request, response);
+                    request.getRequestDispatcher("usua.jsp").forward(request, response);
                     break;
 
                 case "carga":
                     idUsr = Integer.parseInt(request.getParameter("id"));
                     registroBeens regM = miRegisD.cargar(idUsr);
                     request.setAttribute("Usuario", regM);
-                    request.getRequestDispatcher("usuario/usua.jsp").forward(request, response);
+                    request.getRequestDispatcher("usua.jsp").forward(request, response);
                     break;
                     
                 case "modificar":
@@ -82,7 +82,7 @@ public class ControladorUsu extends HttpServlet {
                     miRegisB.setId(idUsr);
                     miRegisD.modificar(miRegisB);
                     request.setAttribute("Usuario", miRegisB);
-                    request.getRequestDispatcher("usuario/usua.jsp").forward(request, response);
+                    request.getRequestDispatcher("usua.jsp").forward(request, response);
                     break;
                 }    
             }

@@ -7,9 +7,15 @@
         <title>JSP Page</title>
         <%@include file="commons/cdn.jsp"%>
         <link rel="stylesheet" href="css/global.css" type="text/css">
+        
     </head>
     <body>
         <%@include file="commons/cabecera.jsp"%>
+        <%@include file="commons/contenido.jsp"%>
         <%@include file="commons/pie.jsp"%>
+        
+        
+        
+        
     </body>
 </html>

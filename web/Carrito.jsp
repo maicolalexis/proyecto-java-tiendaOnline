@@ -29,11 +29,11 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <c:forEach var="carrito" items="${car}">
+                            
                             <td>${carrito.getNombre() }</td>
                             <td>${carrito.getPrecioFinal()}</td>
                             <td>${carrito.getDescrip()}</td>
-                            </c:forEach>
+                             
                         </tr>
                     </tbody>
                 </table>
