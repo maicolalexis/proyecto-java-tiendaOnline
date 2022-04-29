@@ -16,7 +16,7 @@ public class BeensCarrito {
     String descripcion;
     float Costo;
     int cantidad;
-    double subTotal;
+    float subTotal;
 
     public int getItem() {
         return item;
@@ -66,18 +66,18 @@ public class BeensCarrito {
         this.cantidad = cantidad;
     }
 
-    public double getSubTotal() {
+    public float getSubTotal() {
         return subTotal;
     }
 
-    public void setSubTotal(double subTotal) {
+    public void setSubTotal(float subTotal) {
         this.subTotal = subTotal;
     }
     
     public BeensCarrito() {
     }
 
-    public BeensCarrito(int item, int id, String nombres, String descripcion, float Costo, int cantidad, double subTotal) {
+    public BeensCarrito(int item, int id, String nombres, String descripcion, float Costo, int cantidad, float subTotal) {
         this.item = item;
         this.id = id;
         this.nombres = nombres;

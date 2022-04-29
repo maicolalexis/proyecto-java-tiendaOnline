@@ -15,7 +15,7 @@
         
         <div class="container mt-5">
             <div class="row">
-                <div class="col-sm-10" style="display: flex">
+                <div class="col-sm-10" style="display: flex; ">
                     <%
                             List lis = new ProductoDAO().getAll();
                             ListIterator list = lis.listIterator();
@@ -23,7 +23,7 @@
                                 ProductoBeans regM = (ProductoBeans) list.next();
 
                         %>
-                    <div class="card" >
+                    <div class="card" style="width: 400px; height:450px; " >
                         
                         
                         <div class="card-header bg-dark text-white">
@@ -32,9 +32,9 @@
                             
                             
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" style="display: flex; justify-content: center;">
                             
-                            <img src="ControladorIMG?id=<%=regM.getId()%>" style="width: 200px; height: 200px;">
+                            <img src="ControladorIMG?id=<%=regM.getId()%>" width="200px" height="200px" >
                             
                             
                             
@@ -42,8 +42,8 @@
                             <i style="text-align: center;">$<%=regM.getCosto()%></i>
                         <div class="card-footer bg-dark text-white">
                             <label><%=regM.getDescripcion()%></label>
-                            <div>
-                                <a href="ControladorCarrito?accion=Agregar" class="btn btn-primary">agregar a carrito</a>
+                            <div style="display: flex; justify-content: center;">
+                                <a href="ControladorCarrito?accion=Agregar&id=<%=regM.getId()%>" class="btn btn-primary">agregar a carrito</a>
                                 <a href="" class="btn btn-danger">comprar</a>
                             </div>
                             

@@ -183,7 +183,7 @@ public class ProductoDAO {
     } 
     
     public ProductoBeans añadirId(int id){
-        String SQL ="select * from productos where id="+id;
+        String SQL ="select * from producto where id="+id;
         ProductoBeans BP = new ProductoBeans();
         try {
             cnx = con.ConexBD();
@@ -192,6 +192,7 @@ public class ProductoDAO {
             while(rs.next()){
                 BP.setId(rs.getInt("id"));
                 BP.setNombre(rs.getString("nombres"));
+                BP.setImagen(rs.getBinaryStream("imagen"));
                 BP.setCosto(rs.getFloat("costo"));
                 BP.setDescripcion(rs.getString("descripcion"));
                 BP.setCantidad(rs.getInt("cantidad"));
