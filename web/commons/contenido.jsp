@@ -13,48 +13,53 @@
     </head>
     <body>
         
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-sm-10" style="display: flex; ">
-                    <%
+        <div class="container mt-5 ">
+            <div class="row ">
+                <%
                             List lis = new ProductoDAO().getAll();
                             ListIterator list = lis.listIterator();
                             while (list.hasNext()) {
                                 ProductoBeans regM = (ProductoBeans) list.next();
+                                
 
                         %>
-                    <div class="card" style="width: 400px; height:450px; " >
+                        <div class="col-md-4 mt-5" id="card" style="padding: -0;">
+                    
+                    
                         
                         
-                        <div class="card-header bg-dark text-white">
+                            <div class="card text-center bg-dark text-white" style="width: 18rem;">
                             
                             <h2><%=regM.getNombre()%></h2>
                             
                             
+                        
+                        <div class="card-body bg-white">
+                            
+                            <img src="ControladorIMG?id=<%=regM.getId()%>" width="220px" height="220px" >
+                            
+                            
+                            
                         </div>
-                        <div class="card-body" style="display: flex; justify-content: center;">
-                            
-                            <img src="ControladorIMG?id=<%=regM.getId()%>" width="200px" height="200px" >
-                            
-                            
-                            
-                        </div>
-                            <i style="text-align: center;">$<%=regM.getCosto()%></i>
-                        <div class="card-footer bg-dark text-white">
+                            <i class="bg-white text-dark" style="text-align: center;">$<%=regM.getCosto()%></i>
+                        <div class="card bg-dark text-white">
                             <label><%=regM.getDescripcion()%></label>
-                            <div style="display: flex; justify-content: center;">
+                            <div>
                                 <a href="ControladorCarrito?accion=Agregar&id=<%=regM.getId()%>" class="btn btn-primary">agregar a carrito</a>
                                 <a href="" class="btn btn-danger">comprar</a>
                             </div>
+                        </div>
                             
                         </div>
                         
-                    </div>
-                        <%
-                            }
-                        %> 
+                    
+                        
                 </div>
+                 <%
+                    }
+                %>           
             </div>
+                
         </div>
                
                 
