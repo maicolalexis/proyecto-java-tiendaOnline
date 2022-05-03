@@ -67,9 +67,9 @@ public class ControladorCarrito extends HttpServlet {
                     request.getRequestDispatcher("ControladorCarrito?accion=index").forward(request,response); 
                 break;
                 case "Carrito":
-                    /*totalpagar=0;
+                    totalpagar=0;
                     request.setAttribute("car",Listacarrito);
-                    request.getRequestDispatcher("Carrito.jsp").forward(request,response);*/
+                    request.getRequestDispatcher("carrito.jsp").forward(request,response);
                 break;
                 case "pagar":
                 break;

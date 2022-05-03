@@ -7,7 +7,7 @@
 
 
 
-<%@page import="DAO.productosDAO"%>
+
 <%@page import="beens.productosBeens"%>
 <%@page import="java.util.ListIterator"%>
 <%@page import="java.util.List"%>
