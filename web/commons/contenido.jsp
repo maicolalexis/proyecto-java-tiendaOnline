@@ -46,7 +46,7 @@
                             <label><%=regM.getDescripcion()%></label>
                             <div>
                                 <a href="ControladorCarrito?accion=Agregar&id=<%=regM.getId()%>" class="btn btn-primary">agregar a carrito</a>
-                                <a href="" class="btn btn-danger">comprar</a>
+                                <a href="ControladorCarrito?accion=Comprar&id=<%=regM.getId()%>" class="btn btn-danger">comprar</a>
                             </div>
                         </div>
                             

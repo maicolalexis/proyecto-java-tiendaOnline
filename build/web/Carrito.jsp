@@ -4,6 +4,7 @@
     Author     : User1
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -22,19 +23,19 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Item<th>
+                                <th>Item</th>
                                 <th>Nombre</th>
                                 <th>Descripcion</th>
                                 <th>precio</th>
-                                <th>cantidad<th>
-                                <th>SubTotal<th>
+                                <th>cantidad</th>
+                                <th>SubTotal</th>
                                 <th>Accion</th>
                                 
                             </tr>
                             
                         </thead>
                         <tbody>
-                            <c:forEach var="car" items="${carrito}">
+                        <c:forEach var="car" items="${carrito}">
                                 
                             
                             <tr>
@@ -46,11 +47,12 @@
                             
                                 <td>${car.getCosto()}</td>
                                 <td>${car.getCantidad()}</td>
-                                <td>${car.getSubTotal()}</td>
+                                <td>${car.getSubTotal()}</td>   
                                 <td>
                                     <a>eliminar</a>
                                     <a>Modificar</a>
                                 </td>
+                                
                                 
                                 
                                 

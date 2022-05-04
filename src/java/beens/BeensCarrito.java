@@ -73,7 +73,7 @@ public class BeensCarrito {
     public void setSubTotal(float subTotal) {
         this.subTotal = subTotal;
     }
-    
+
     public BeensCarrito() {
     }
 
@@ -86,6 +86,8 @@ public class BeensCarrito {
         this.cantidad = cantidad;
         this.subTotal = subTotal;
     }
+
+    
     
 
 }
