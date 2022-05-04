@@ -4,6 +4,7 @@
     Author     : SENA
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -34,17 +35,28 @@
                             
                         </thead>
                         <tbody>
+                            <c:forEach var="car" items="${carrito}">
+                                
+                            
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>${car.getItem()}</td>
+                                <td>${car.getNombres()}</td>
+                                <td>${car.getDescripcion()}
+                                    <img src="ControladorIMG?id=${car.getId()}" width="100" height="100"> 
+                                </td>
+                            
+                                <td>${car.getCosto()}</td>
+                                <td>${car.getCantidad()}</td>
+                                <td>${car.getSubTotal()}</td>
+                                <td>
+                                    <a>eliminar</a>
+                                    <a>Modificar</a>
+                                </td>
+                                
                                 
                                 
                             </tr>
+                            </c:forEach>
                         </tbody>
                     </table>
                 </div>
@@ -55,11 +67,11 @@
                         </div>
                         <div class="card-body">
                             <label>Subtotal:</label>
-                            <input type="text" readonly="" class="form-control">
+                            <input type="text" value="$.${totalPagar}0" readonly="" class="form-control">
                             <label>Descuento:</label>
-                            <input type="text" readonly="" class="form-control">
+                            <input type="text" value="0.00" readonly="" class="form-control">
                             <label>Total Pagar:</label>
-                            <input type="text" readonly="" class="form-control">
+                            <input type="text" value="$.${totalPagar}0" readonly="" class="form-control">
                         </div>
                         <div class="card-footer">
                             <a href="" class="btn btn-info btn-block">realizar pago</a>

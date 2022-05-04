@@ -68,7 +68,11 @@ public class ControladorCarrito extends HttpServlet {
                 break;
                 case "Carrito":
                     totalpagar=0;
-                    request.setAttribute("car",Listacarrito);
+                    request.setAttribute("carrito",Listacarrito);
+                    for (int i = 0; i < Listacarrito.size(); i++) {
+                        totalpagar = totalpagar+Listacarrito.get(i).getSubTotal();
+                    }
+                    request.setAttribute("totalPagar", totalpagar);
                     request.getRequestDispatcher("carrito.jsp").forward(request,response);
                 break;
                 case "pagar":
