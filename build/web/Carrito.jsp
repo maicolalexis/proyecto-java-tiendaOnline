@@ -1,17 +1,16 @@
 <%-- 
     Document   : carrito
-    Created on : 3/05/2022, 05:00:54 PM
-    Author     : SENA
+    Created on : 4/05/2022, 01:45:50 PM
+    Author     : User1
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <%@include file="commons/cdn.jsp"%>
+   <%@include file="commons/cdn.jsp"%>
     </head>
     <body>
         <%@include file="commons/cabeceraCarrito.jsp" %>

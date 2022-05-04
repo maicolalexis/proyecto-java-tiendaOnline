@@ -60,19 +60,19 @@ public class ControladorUsu extends HttpServlet {
                     request.getRequestDispatcher("usua.jsp").forward(request, response);
                     break;
 
-                case "carga":
+                case "cargar":
                     idUsr = Integer.parseInt(request.getParameter("id"));
                     registroBeens regM = miRegisD.cargar(idUsr);
                     request.setAttribute("Usuario", regM);
                     request.getRequestDispatcher("usua.jsp").forward(request, response);
-                    break;
+                    break;   
                     
                 case "modificar":
 
-                    String nom2 = request.getParameter("nombres");
-                    String cont2 = request.getParameter("contacto");
-                    String email2 = request.getParameter("correo");
-                    String pass2 = request.getParameter("password");
+                    String nom2 = request.getParameter("Nombres");
+                    String cont2 = request.getParameter("Contacto");
+                    String email2 = request.getParameter("Correo");
+                    String pass2 = request.getParameter("Password");
                     miRegisB.setNombre(nom2);
                     miRegisB.setContact(cont2);
                     miRegisB.setEmail(email2);

@@ -29,19 +29,19 @@
                             <div class="col-sm-3">
 
                                 <label>Nombre</label>
-                                <input type="text" value="${usuario.getNombre()}" name="nombres" class="form-control placeholder bg-dark text-white">
+                                <input type="text" value="${usuario.getNombre()}" name="Nombres" class="form-control placeholder bg-dark text-white">
                             </div>
                             <div class="col-sm-3">
                                 <label>Contacto</label>
-                                <input type="text" value="${usuario.getContact()}" name="contacto" class="form-control placeholder bg-dark text-white">
+                                <input type="text" value="${usuario.getContact()}" name="Contacto" class="form-control placeholder bg-dark text-white">
                             </div>
                             <div class="col-sm-3">
                                 <label>Correo</label>
-                                <input type="text" value="${usuario.getEmail()}" name="correo" class="form-control placeholder bg-dark text-white">
+                                <input type="text" value="${usuario.getEmail()}" name="Correo" class="form-control placeholder bg-dark text-white">
                             </div>
                            <div class="col-sm-3">
                                 <label>pass</label>
-                                <input type="text" value="${usuario.getEmail()}" name="password" class="form-control placeholder bg-dark text-white">
+                                <input type="text" value="${usuario.getEmail()}" name="Password" class="form-control placeholder bg-dark text-white">
                             </div>
 
                         </div>

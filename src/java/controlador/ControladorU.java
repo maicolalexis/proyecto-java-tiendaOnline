@@ -64,7 +64,7 @@ public class ControladorU extends HttpServlet {
 
                     miRegisD.insertar(miRegisB);
 
-                    request.getRequestDispatcher("admin/UsuarioPrincipal.jsp").forward(request, response);
+                    request.getRequestDispatcher("UsuarioPrincipal.jsp").forward(request, response);
                     break;
                 default:
                     throw new AssertionError();
@@ -73,14 +73,14 @@ public class ControladorU extends HttpServlet {
                     idUsr = Integer.parseInt(request.getParameter("id"));
 
                     miRegisD.eliminar(idUsr);
-                    request.getRequestDispatcher("admin/UsuarioPrincipal.jsp").forward(request, response);
+                    request.getRequestDispatcher("UsuarioPrincipal.jsp").forward(request, response);
                     break;
 
                 case "carga":
                     idUsr = Integer.parseInt(request.getParameter("id"));
                     registroBeens miBeans = miRegisD.cargar(idUsr);
                     request.setAttribute("usuario", miBeans);
-                    request.getRequestDispatcher("admin/UsuarioPrincipal.jsp").forward(request, response);
+                    request.getRequestDispatcher("UsuarioPrincipal.jsp").forward(request, response);
                     break;
                     
                 case "modificar":
@@ -96,7 +96,7 @@ public class ControladorU extends HttpServlet {
                     miRegisB.setId(idUsr);
                     miRegisD.modificar(miRegisB);
 
-                    request.getRequestDispatcher("admin/UsuarioPrincipal.jsp").forward(request, response);
+                    request.getRequestDispatcher("UsuarioPrincipal.jsp").forward(request, response);
                     break;
         
                     

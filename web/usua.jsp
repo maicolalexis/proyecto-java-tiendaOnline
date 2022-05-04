@@ -29,22 +29,23 @@
                             <div class="col-sm-3">
 
                                 <label>Nombre</label>
-                                <input type="text" value="${Usuario.getNombre()}" name="nombres" class="form-control placeholder bg-dark text-white">
+                                <input type="text" value="${Usuario.getNombre()}" name="Nombres" class="form-control placeholder bg-dark text-white">
                             </div>
                             <div class="col-sm-3">
                                 <label>Contacto</label>
-                                <input type="text" value="${Usuario.getContact()}" name="contacto" class="form-control placeholder bg-dark text-white">
+                                <input type="text" value="${Usuario.getContact()}" name="Contacto" class="form-control placeholder bg-dark text-white">
                             </div>
                             <div class="col-sm-3">
                                 <label>Correo</label>
-                                <input type="text" value="${Usuario.getEmail()}" name="correo" class="form-control placeholder bg-dark text-white">
+                                <input type="text" value="${Usuario.getEmail()}" name="Correo" class="form-control placeholder bg-dark text-white">
                             </div>
                            <div class="col-sm-3">
                                 <label>pass</label>
-                                <input type="text" value="${Usuario.getPass()}" name="password" class="form-control placeholder bg-dark text-white">
+                                <input type="text" value="${Usuario.getEmail()}" name="Password" class="form-control placeholder bg-dark text-white">
                             </div>
 
                         </div>
+                        
                         <button type="submit" name="accion" value="modificar"  class="btn btn-dark">
                             <i class="fas fa-edit"></i> Modificar
                         </button>
@@ -74,7 +75,7 @@
                             <td>${Usuario.getEmail()}</td>
                             <td>${Usuario.getRol()}</td>
                             
-                            <td><center><a class="btn btn-warning" href="ControladorUsu?menu=Usuario&accion=carga&id=${Usuario.getId()}">Actualizar</a></center></td>
+                            <td><center><a class="btn btn-warning" href="ControladorUsu?menu=Usuario&accion=cargar&id=${Usuario.getId()}">Actualizar</a></center></td>
                         </tr>
                     </table>
 
