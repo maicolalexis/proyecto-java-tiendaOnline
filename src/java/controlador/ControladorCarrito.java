@@ -99,6 +99,16 @@ public class ControladorCarrito extends HttpServlet {
                     request.setAttribute("totalPagar", totalpagar);
                     request.getRequestDispatcher("carrito.jsp").forward(request, response);
                 break;
+                case "Delete":
+                    int id = Integer.parseInt(request.getParameter("idp"));
+                    for (int i = 0; i < Listacarrito.size(); i++) {
+                        if (Listacarrito.get(i).getId() == id) {
+                            Listacarrito.remove(i);
+                            
+                        }
+                        
+                    }
+                    break;
                 default:
                     request.getRequestDispatcher("index.jsp").forward(request,response);
                     

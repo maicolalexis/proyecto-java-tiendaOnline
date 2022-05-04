@@ -11,14 +11,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-   <%@include file="commons/cdn.jsp"%>
+        <%@include file="commons/cdn.jsp"%>
     </head>
     <body>
         <%@include file="commons/cabeceraCarrito.jsp" %>
         <div class="container mt-4">
-            
+
             <div class="row">
-                
+
                 <div class="col-sm-8">
                     <table class="table table-hover">
                         <thead>
@@ -30,33 +30,34 @@
                                 <th>cantidad</th>
                                 <th>SubTotal</th>
                                 <th>Accion</th>
-                                
+
                             </tr>
-                            
+
                         </thead>
                         <tbody>
-                        <c:forEach var="car" items="${carrito}">
-                                
-                            
-                            <tr>
-                                <td>${car.getItem()}</td>
-                                <td>${car.getNombres()}</td>
-                                <td>${car.getDescripcion()}
-                                    <img src="ControladorIMG?id=${car.getId()}" width="100" height="100"> 
-                                </td>
-                            
-                                <td>${car.getCosto()}</td>
-                                <td>${car.getCantidad()}</td>
-                                <td>${car.getSubTotal()}</td>   
-                                <td>
-                                    <a>eliminar</a>
-                                    <a>Modificar</a>
-                                </td>
-                                
-                                
-                                
-                                
-                            </tr>
+                            <c:forEach var="car" items="${carrito}">
+
+
+                                <tr>
+                                    <td>${car.getItem()}</td>
+                                    <td>${car.getNombres()}</td>
+                                    <td>${car.getDescripcion()}
+                                        <img src="ControladorIMG?id=${car.getId()}" width="100" height="100"> 
+                                    </td>
+
+                                    <td>${car.getCosto()}</td>
+                                    <td>${car.getCantidad()}</td>
+                                    <td>${car.getSubTotal()}</td>   
+                                    <td>
+                                        <input type="hidden" id="idp" value="${car.getId()}">
+                                        <a href="#" id="btnDelete">eliminar</a>
+
+                                    </td>
+
+
+
+
+                                </tr>
                             </c:forEach>
                         </tbody>
                     </table>
@@ -77,11 +78,13 @@
                         <div class="card-footer">
                             <a href="" class="btn btn-info btn-block">realizar pago</a>
                             <a href="" class="btn btn-danger btn-block">generar compra</a>
-                            
-                            
+
+
                         </div>
                     </div>
+                </div>
             </div>
-        </div>
+            <script src="js/funciones.js" type="text/javascript"></script>
+            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 </html>
