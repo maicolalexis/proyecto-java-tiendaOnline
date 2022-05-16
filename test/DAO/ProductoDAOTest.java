@@ -43,14 +43,19 @@ public class ProductoDAOTest {
     /**
      * Test of insertar method, of class ProductoDAO.
      */
-    @Test
+    
     public void testInsertar() {
         System.out.println("insertar");
         ProductoBeans r = new ProductoBeans();
+        r.setId(13);
         r.setNombre("sakdsakdskad");
-        
+        r.setImagen(null);
+        r.setCosto(1000);
+        r.setDescripcion("sapdkas");
+        r.setCantidad(2);
+        r.setCategoria(1);
         ProductoDAO instance = new ProductoDAO();
-        int expResult = 1;
+        int expResult = 0;
         int result = instance.insertar(r);
         assertEquals(expResult, result);
         
@@ -64,12 +69,14 @@ public class ProductoDAOTest {
     @Test
     public void testGetAll() {
         System.out.println("getAll");
-       
+        ProductoBeans r = new ProductoBeans();
         ProductoDAO instance = new ProductoDAO();
         
-        
         List result = instance.getAll();
+        
         assertNotEquals(null, result);
+        
+        
         // TODO review the generated test code and remove the default call to fail.
       
     }
@@ -124,13 +131,14 @@ public class ProductoDAOTest {
     @Test
     public void testModificar() {
         System.out.println("modificar");
-        ProductoBeans r = null;
+        ProductoBeans r = new ProductoBeans(13, "sakdsakdskad", null, 1000, "sapdkas", 2, 1, 1);
+        r.setNombre("maikitol");
         ProductoDAO instance = new ProductoDAO();
         int expResult = 0;
         int result = instance.modificar(r);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -139,13 +147,15 @@ public class ProductoDAOTest {
     @Test
     public void testAñadirId() {
         System.out.println("a\u00f1adirId");
-        int id = 0;
+        ProductoBeans r = new ProductoBeans();
+        int id = 15;
+      
         ProductoDAO instance = new ProductoDAO();
         ProductoBeans expResult = null;
         ProductoBeans result = instance.añadirId(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
     
 }
