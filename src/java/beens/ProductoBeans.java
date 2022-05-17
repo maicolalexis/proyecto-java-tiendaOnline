@@ -104,9 +104,7 @@ public class ProductoBeans {
         this.categoria = categoria;
     }
 
-    public void getImagen(InputStream binaryStream) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
    
     

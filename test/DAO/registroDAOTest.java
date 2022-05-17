@@ -6,6 +6,7 @@
 package DAO;
 
 import beens.registroBeens;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -82,7 +83,9 @@ public class registroDAOTest {
     @Test
     public void testGetAll() {
         System.out.println("getAll");
+        
         registroDAO instance = new registroDAO();
+         List<registroBeens> lista = new ArrayList<>();
         List expResult = null;
         List result = instance.getAll();
         assertEquals(expResult, result);
@@ -96,13 +99,13 @@ public class registroDAOTest {
     @Test
     public void testEliminar() {
         System.out.println("eliminar");
-        int id = 0;
+        int id = 7;
         registroDAO instance = new registroDAO();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.eliminar(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -111,13 +114,13 @@ public class registroDAOTest {
     @Test
     public void testCargar() {
         System.out.println("cargar");
-        int id = 0;
+        int id = 4;
         registroDAO instance = new registroDAO();
-        registroBeens expResult = null;
+        registroBeens expResult = new registroBeens();
         registroBeens result = instance.cargar(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -126,13 +129,14 @@ public class registroDAOTest {
     @Test
     public void testModificar() {
         System.out.println("modificar");
-        registroBeens r = null;
+        registroBeens r = new registroBeens(3, "asdsadas","dsadsad", "dasdasdas", "sdadasd", "Usuario");
+        r.setNombre("maik");
         registroDAO instance = new registroDAO();
         int expResult = 0;
         int result = instance.modificar(r);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
