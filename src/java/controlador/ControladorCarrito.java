@@ -40,85 +40,126 @@ public class ControladorCarrito extends HttpServlet {
     ProductoBeans Pbeans = new ProductoBeans();
     int IdPro;
     int item;
-    int cantidad=1;
-    float totalpagar=0;
+    int cantidad = 1;
+    float totalpagar = 0;
     BeensCarrito car;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String acc = request.getParameter("accion");
         PB = DAO.getAll();
-        
-            switch(acc){
-            
-                
-                case "Agregar":
-                    IdPro = Integer.parseInt(request.getParameter("id"));
-                    Pbeans = DAO.añadirId(IdPro);
-                    item=item+1;
-                    car = new BeensCarrito();
-                    car.setItem(item);
-                    
-                    car.setNombres(Pbeans.getNombre());
-                    car.setDescripcion(Pbeans.getDescripcion());
-                    car.setId(Pbeans.getId());
-                    car.setCosto(Pbeans.getCosto());
-                    car.setCantidad(cantidad);
-                    car.setSubTotal(cantidad*Pbeans.getCosto());
-                    Listacarrito.add(car);
-                    request.setAttribute("contador", Listacarrito.size());
-                    request.getRequestDispatcher("ControladorCarrito?accion=index").forward(request,response); 
-                break;
-                case "Carrito":
-                    totalpagar=0;
-                    request.setAttribute("carrito", Listacarrito);
+
+        switch (acc) {
+
+            case "Agregar":
+                int pos = 0;
+                cantidad = 1;
+                IdPro = Integer.parseInt(request.getParameter("id"));
+                Pbeans = DAO.añadirId(IdPro);
+                if (Listacarrito.size() > 0) {
                     for (int i = 0; i < Listacarrito.size(); i++) {
-                        totalpagar = totalpagar+Listacarrito.get(i).getSubTotal();
-                    }
-                    request.setAttribute("totalPagar", totalpagar);
-                    request.getRequestDispatcher("carrito.jsp").forward(request,response);
-                break;
-                case "Comprar":
-                    IdPro = Integer.parseInt(request.getParameter("id"));
-                    Pbeans = DAO.añadirId(IdPro);
-                    item=item+1;
-                    car = new BeensCarrito();
-                    car.setItem(item);
-                    
-                    car.setNombres(Pbeans.getNombre());
-                    car.setDescripcion(Pbeans.getDescripcion());
-                    car.setId(Pbeans.getId());
-                    car.setCosto(Pbeans.getCosto());
-                    car.setCantidad(cantidad);
-                    car.setSubTotal(cantidad*Pbeans.getCosto());
-                    Listacarrito.add(car);
-                    for (int i = 0; i < Listacarrito.size(); i++) {
-                        totalpagar = totalpagar+Listacarrito.get(i).getSubTotal();
-                    }
-                    request.setAttribute("carrito", Listacarrito);
-                    request.setAttribute("contador", Listacarrito.size());
-                    request.setAttribute("totalPagar", totalpagar);
-                    request.getRequestDispatcher("carrito.jsp").forward(request, response);
-                break;
-                case "Delete":
-                    int id = Integer.parseInt(request.getParameter("idp"));
-                    for (int i = 0; i < Listacarrito.size(); i++) {
-                        if (Listacarrito.get(i).getId() == id) {
-                            Listacarrito.remove(i);
-                            
+
+                        if (IdPro == Listacarrito.get(i).getId()) {
+                            pos = i;
                         }
+
+                    }
+                    if (IdPro == Listacarrito.get(pos).getId()) {
+                        cantidad = Listacarrito.get(pos).getCantidad() + cantidad;
+                        float subtotal = Listacarrito.get(pos).getCosto() * cantidad;
+                        Listacarrito.get(pos).setCantidad(cantidad);
+                        Listacarrito.get(pos).setSubTotal(subtotal);
+
+                    } else {
+                        item = item + 1;
+                        car = new BeensCarrito();
+                        car.setItem(item);
+
+                        car.setNombres(Pbeans.getNombre());
+                        car.setDescripcion(Pbeans.getDescripcion());
+                        car.setId(Pbeans.getId());
+                        car.setCosto(Pbeans.getCosto());
+                        car.setCantidad(cantidad);
+                        car.setSubTotal(cantidad * Pbeans.getCosto());
+                        Listacarrito.add(car);
+                    }
+
+                } else {
+                    item = item + 1;
+                    car = new BeensCarrito();
+                    car.setItem(item);
+
+                    car.setNombres(Pbeans.getNombre());
+                    car.setDescripcion(Pbeans.getDescripcion());
+                    car.setId(Pbeans.getId());
+                    car.setCosto(Pbeans.getCosto());
+                    car.setCantidad(cantidad);
+                    car.setSubTotal(cantidad * Pbeans.getCosto());
+                    Listacarrito.add(car);
+                }
+
+                request.setAttribute("contador", Listacarrito.size());
+                request.getRequestDispatcher("ControladorCarrito?accion=index").forward(request, response);
+                break;
+            case "Carrito":
+                totalpagar = 0;
+                request.setAttribute("carrito", Listacarrito);
+                for (int i = 0; i < Listacarrito.size(); i++) {
+                    totalpagar = totalpagar + Listacarrito.get(i).getSubTotal();
+                }
+                request.setAttribute("totalPagar", totalpagar);
+                request.getRequestDispatcher("carrito.jsp").forward(request, response);
+                break;
+            case "Comprar":
+                IdPro = Integer.parseInt(request.getParameter("id"));
+                Pbeans = DAO.añadirId(IdPro);
+                item = item + 1;
+                car = new BeensCarrito();
+                car.setItem(item);
+
+                car.setNombres(Pbeans.getNombre());
+                car.setDescripcion(Pbeans.getDescripcion());
+                car.setId(Pbeans.getId());
+                car.setCosto(Pbeans.getCosto());
+                car.setCantidad(cantidad);
+                car.setSubTotal(cantidad * Pbeans.getCosto());
+                Listacarrito.add(car);
+                for (int i = 0; i < Listacarrito.size(); i++) {
+                    totalpagar = totalpagar + Listacarrito.get(i).getSubTotal();
+                }
+                request.setAttribute("carrito", Listacarrito);
+                request.setAttribute("contador", Listacarrito.size());
+                request.setAttribute("totalPagar", totalpagar);
+                request.getRequestDispatcher("carrito.jsp").forward(request, response);
+                break;
+            case "Delete":
+                int id = Integer.parseInt(request.getParameter("idp"));
+                for (int i = 0; i < Listacarrito.size(); i++) {
+                    if (Listacarrito.get(i).getId() == id) {
+                        Listacarrito.remove(i);
+
+                    }
+
+                }
+                break;
+            case "ActualizarCantidad":
+                int idp = Integer.parseInt(request.getParameter("idp"));
+                int cant = Integer.parseInt(request.getParameter("cantidad"));
+                for (int i = 0; i < Listacarrito.size(); i++) {
+                    if(Listacarrito.get(i).getId() == idp){
+                        Listacarrito.get(i).setCantidad(cant);
+                        float st = Listacarrito.get(i).getCosto()*cant;
+                        Listacarrito.get(i).setSubTotal(st);
                         
                     }
-                    break;
-                default:
-                    request.getRequestDispatcher("index.jsp").forward(request,response);
                     
-                
-            
-            
-            }
-        
+                }
+            default:
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+
+        }
+
     }
-        
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

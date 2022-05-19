@@ -46,11 +46,13 @@
                                     </td>
 
                                     <td>${car.getCosto()}</td>
-                                    <td>${car.getCantidad()}</td>
+                                    <td>
+                                        <input type="hidden" id="idpro" value="${car.getId()}">
+                                        <input type="number" id="cantidad" value="${car.getCantidad()}" class="form-control text-center" min="1"> </td>
                                     <td>${car.getSubTotal()}</td>   
                                     <td>
                                         <input type="hidden" id="idp" value="${car.getId()}">
-                                        <a href="#" id="btnDelete">eliminar</a>
+                                        <a href="#" class="btn btn-danger" id="btnDelete">eliminar</a>
 
                                     </td>
 
@@ -84,7 +86,9 @@
                     </div>
                 </div>
             </div>
-            <script src="js/funciones.js" type="text/javascript"></script>
             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script src="js/funciones.js" type="text/javascript"></script>
+            
+            
     </body>
 </html>
